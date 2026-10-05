@@ -46,6 +46,8 @@ La primera vez que se ejecuta, el widget registra sus notificaciones y su icono 
 **Opción B: Instalación manual**
 Clona este repositorio y ejecuta:
 ```bash
+git clone https://github.com/natstyles/plasmoid-token-usage.git
+cd plasmoid-token-usage
 ./install.sh
 ```
 
