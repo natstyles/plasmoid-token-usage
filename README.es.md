@@ -38,7 +38,7 @@ El widget usa las sesiones que ya tienes iniciadas en herramientas de la termina
 - No se envía telemetría ni datos a terceros.
 
 ## Instalación
-**Opción A: Desde la KDE Store (Recomendada)**
+**Opción A: Desde la [KDE Store](https://www.opendesktop.org/p/2377168/) (Recomendada)**
 Clic derecho en el panel o escritorio -> "Añadir widgets..." -> "Obtener nuevos widgets..." -> Busca "Token Usage".
 
 La primera vez que se ejecuta, el widget registra sus notificaciones y su icono en `~/.local/share/`. Hasta entonces, "Añadir widgets" puede mostrar un icono genérico.

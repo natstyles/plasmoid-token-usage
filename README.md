@@ -38,7 +38,7 @@ This widget reads the sessions you already have active in other CLI tools on you
 - No analytics, telemetry, or data is sent to any third party.
 
 ## Installation
-**Option A: From the KDE Store (Recommended)**
+**Option A: From the [KDE Store](https://www.opendesktop.org/p/2377168/) (Recommended)**
 Right-click on your desktop or panel -> "Add Widgets..." -> "Get New Widgets..." -> Search for "Token Usage".
 
 On first launch the widget registers its notifications and its icon in `~/.local/share/`. Until it has run once, "Add Widgets" may show a generic icon.
