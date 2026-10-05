@@ -1,0 +1,10 @@
+# Generated files
+dist/
+__pycache__/
+*.pyc
+*.po~
+
+# Local tools and internal notes (not part of the widget)
+dev/
+GUIA_KDE_STORE.md
+STORE.md

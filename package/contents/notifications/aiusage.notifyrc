@@ -1,0 +1,20 @@
+[Global]
+IconName=utilities-system-monitor
+Name=Token Usage
+Name[es]=Uso de tokens
+Comment=Claude, ChatGPT and Gemini token usage
+Comment[es]=Uso de tokens de Claude, ChatGPT y Gemini
+
+[Event/threshold]
+Name=Usage limit near
+Name[es]=Límite de uso cerca
+Comment=Usage has reached the warning or critical threshold
+Comment[es]=El uso ha llegado al umbral de aviso o al crítico
+Action=Popup
+
+[Event/reset]
+Name=Tokens reloaded
+Name[es]=Tokens recargados
+Comment=A usage quota has been reset
+Comment[es]=Se ha reiniciado una cuota de uso
+Action=Popup

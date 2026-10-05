@@ -1,0 +1,552 @@
+# Spanish translations for Token package.
+# Copyright (C) 2026 THE Token'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Token Usage package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Token Usage\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 21:56-0600\n"
+"PO-Revision-Date: 2026-10-04 21:56-0600\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: package/contents/ui/ColorField.qml:23
+msgid "Color Picker"
+msgstr "Cuentagotas"
+
+#: package/contents/ui/ColorField.qml:29
+msgid "Click anywhere on the screen to copy its color"
+msgstr "Haz clic en cualquier punto de la pantalla para copiar su color"
+
+#: package/contents/ui/ColorField.qml:36 package/contents/ui/LogoField.qml:38
+#: package/contents/ui/SoundField.qml:61
+msgid "Default"
+msgstr "Por defecto"
+
+#: package/contents/ui/configAppearance.qml:36
+msgid "Panel"
+msgstr "Panel"
+
+#: package/contents/ui/configAppearance.qml:41
+#: package/contents/ui/configAppearance.qml:67
+msgid "Style:"
+msgstr "Estilo:"
+
+#: package/contents/ui/configAppearance.qml:42
+msgid "Double rings (session and weekly)"
+msgstr "Anillos dobles (sesión y semana)"
+
+#: package/contents/ui/configAppearance.qml:42
+msgid "Ring with percentage"
+msgstr "Anillo con porcentaje"
+
+#: package/contents/ui/configAppearance.qml:42
+msgid "Logo and percentage"
+msgstr "Logo y porcentaje"
+
+#: package/contents/ui/configAppearance.qml:46
+msgid "Percentage shown:"
+msgstr "Porcentaje que se muestra:"
+
+#: package/contents/ui/configAppearance.qml:48
+msgid "Session"
+msgstr "Sesión"
+
+#: package/contents/ui/configAppearance.qml:48 package/contents/ui/main.qml:47
+msgid "Weekly"
+msgstr "Semanal"
+
+#: package/contents/ui/configAppearance.qml:48
+msgid "Highest"
+msgstr "El más alto"
+
+#: package/contents/ui/configAppearance.qml:56
+msgid ""
+"The outer ring is the session and the inner ring is the week, with the logo "
+"in the center."
+msgstr "El anillo exterior es la sesión y el interior la semana, con el logo en el centro."
+
+#: package/contents/ui/configAppearance.qml:57
+msgid "Gemini only has a session limit, so it always shows that."
+msgstr "Gemini solo tiene límite de sesión, así que siempre muestra ese."
+
+#: package/contents/ui/configAppearance.qml:62
+msgid "Popup"
+msgstr "Ventana desplegable"
+
+#: package/contents/ui/configAppearance.qml:68
+msgid "Rings"
+msgstr "Anillos"
+
+#: package/contents/ui/configAppearance.qml:68
+msgid "Bars"
+msgstr "Barras"
+
+#: package/contents/ui/configAppearance.qml:72
+msgid "Width (units):"
+msgstr "Ancho (unidades):"
+
+#: package/contents/ui/configAppearance.qml:78
+msgid "Colored background cards"
+msgstr "Tarjetas con fondo de color"
+
+#: package/contents/ui/configAppearance.qml:87
+#: package/contents/ui/configAppearance.qml:104
+#: package/contents/ui/configAppearance.qml:121
+msgid "Color:"
+msgstr "Color:"
+
+#: package/contents/ui/configAppearance.qml:92
+#: package/contents/ui/configAppearance.qml:109
+#: package/contents/ui/configAppearance.qml:126
+msgid "Logo:"
+msgstr "Logo:"
+
+#: package/contents/ui/configAppearance.qml:134
+msgid "Alerts"
+msgstr "Alertas"
+
+#: package/contents/ui/configAppearance.qml:138
+msgid "Change color when approaching limit"
+msgstr "Cambiar de color al acercarse al límite"
+
+#: package/contents/ui/configAppearance.qml:141
+msgid "Warning / critical (%):"
+msgstr "Aviso / crítico (%):"
+
+#: package/contents/ui/configAppearance.qml:157
+msgid "Notifications:"
+msgstr "Notificaciones:"
+
+#: package/contents/ui/configAppearance.qml:158
+msgid "Notify me"
+msgstr "Avisarme con una notificación"
+
+#: package/contents/ui/configAppearance.qml:165
+msgid "When reaching the warning threshold (%1 %)"
+msgstr "Al llegar al umbral de aviso (%1 %)"
+
+#: package/contents/ui/configAppearance.qml:169
+msgid "When reaching the critical threshold (%1 %)"
+msgstr "Al llegar al umbral crítico (%1 %)"
+
+#: package/contents/ui/configAppearance.qml:173
+msgid "When a quota is reset (tokens reloaded)"
+msgstr "Cuando se reinicie una cuota (tokens recargados)"
+
+#: package/contents/ui/configAppearance.qml:178
+msgid "Warning sound:"
+msgstr "Sonido de aviso:"
+
+#: package/contents/ui/configAppearance.qml:180
+msgctxt "Default warning sound"
+msgid "Default (Warning)"
+msgstr "Por defecto (Aviso)"
+
+#: package/contents/ui/configAppearance.qml:181
+msgid "Claude: %1 % of the session (5 h)"
+msgstr "Claude: %1 % de la sesión (5 h)"
+
+#: package/contents/ui/configAppearance.qml:182
+msgid ""
+"Notification test: you have reached the warning threshold. Resets in 2 h 15 "
+"min."
+msgstr "Prueba de notificación: has llegado al umbral de aviso. Se reinicia en 2 h 15 min."
+
+#: package/contents/ui/configAppearance.qml:187
+msgid "Reset sound:"
+msgstr "Sonido de recarga:"
+
+#: package/contents/ui/configAppearance.qml:189
+msgctxt "Default reset sound"
+msgid "Default (Completed)"
+msgstr "Por defecto (Completado)"
+
+#: package/contents/ui/configAppearance.qml:190
+msgid "Gemini: tokens reloaded"
+msgstr "Gemini: tokens recargados"
+
+#: package/contents/ui/configAppearance.qml:191
+msgid ""
+"Notification test: your session quota has been reset and you have 100 % "
+"available again."
+msgstr "Prueba de notificación: tu cuota de sesión se ha reiniciado y vuelves a tener el 100 % disponible."
+
+#: package/contents/ui/configGeneral.qml:22
+msgid "Update every (min):"
+msgstr "Actualizar cada (min):"
+
+#: package/contents/ui/configGeneral.qml:33
+msgid "Providers:"
+msgstr "Proveedores:"
+
+#: package/contents/ui/configGeneral.qml:34
+msgid "Claude (Claude Code session)"
+msgstr "Claude (sesión de Claude Code)"
+
+#: package/contents/ui/configGeneral.qml:38
+msgid "ChatGPT (Codex CLI session)"
+msgstr "ChatGPT (sesión de Codex CLI)"
+
+#: package/contents/ui/configGeneral.qml:42
+msgid "Gemini (Antigravity running)"
+msgstr "Gemini (Antigravity abierto)"
+
+#: package/contents/ui/configGeneral.qml:51
+msgid "Show:"
+msgstr "Mostrar:"
+
+#: package/contents/ui/configGeneral.qml:52
+msgid "Weekly limits"
+msgstr "Límites semanales"
+
+#: package/contents/ui/configGeneral.qml:56
+msgid "Exact reset date and time"
+msgstr "Día y hora exactos del reinicio"
+
+#: package/contents/ui/configGeneral.qml:60
+msgid "Claude's weekly usage breakdown (Chats, Claude Code...)"
+msgstr "Reparto del uso semanal de Claude (Chats, Claude Code…)"
+
+#: package/contents/ui/configGeneral.qml:64
+msgid "Usage history chart"
+msgstr "Gráfica del historial de uso"
+
+#: package/contents/ui/configGeneral.qml:67
+msgid "History period:"
+msgstr "Periodo del historial:"
+
+#: package/contents/ui/configGeneral.qml:69
+msgid "Last 6 hours"
+msgstr "Últimas 6 horas"
+
+#: package/contents/ui/configGeneral.qml:69
+msgid "Last 24 hours"
+msgstr "Últimas 24 horas"
+
+#: package/contents/ui/configGeneral.qml:69
+msgid "Last 3 days"
+msgstr "Últimos 3 días"
+
+#: package/contents/ui/configGeneral.qml:69
+msgid "Last 7 days"
+msgstr "Últimos 7 días"
+
+#: package/contents/ui/HistoryChart.qml:31
+msgid "%1 d ago"
+msgstr "hace %1 d"
+
+#: package/contents/ui/HistoryChart.qml:31
+msgid "%1 h ago"
+msgstr "hace %1 h"
+
+#: package/contents/ui/HistoryChart.qml:54
+msgid "The history will fill up with each update."
+msgstr "El historial se irá llenando con cada actualización."
+
+#: package/contents/ui/HistoryChart.qml:116
+msgctxt "current time in a chart"
+msgid "now"
+msgstr "ahora"
+
+#: package/contents/ui/LogoField.qml:26
+msgid "Image..."
+msgstr "Imagen…"
+
+#: package/contents/ui/LogoField.qml:32
+msgid "Icon..."
+msgstr "Icono…"
+
+#: package/contents/ui/LogoField.qml:45
+msgid "Choose an image for the logo"
+msgstr "Elige una imagen para el logo"
+
+#: package/contents/ui/LogoField.qml:46
+msgid "Images (*.png *.svg *.svgz *.jpg *.jpeg *.webp *.gif *.bmp *.ico)"
+msgstr "Imágenes (*.png *.svg *.svgz *.jpg *.jpeg *.webp *.gif *.bmp *.ico)"
+
+#: package/contents/ui/LogoField.qml:46 package/contents/ui/SoundField.qml:79
+msgid "All files (*)"
+msgstr "Todos los archivos (*)"
+
+#: package/contents/ui/main.qml:46
+msgid "Session (%1 h)"
+msgstr "Sesión (%1 h)"
+
+#: package/contents/ui/main.qml:48
+msgid "Weekly · %1"
+msgstr "Semanal · %1"
+
+#: package/contents/ui/main.qml:49
+msgid "Daily"
+msgstr "Diario"
+
+#: package/contents/ui/main.qml:50
+msgid "Session · %1"
+msgstr "Sesión · %1"
+
+#: package/contents/ui/main.qml:55
+msgid "Log in to Claude Code (no ~/.claude/.credentials.json found)"
+msgstr "Inicia sesión en Claude Code (no existe ~/.claude/.credentials.json)"
+
+#: package/contents/ui/main.qml:56
+msgid "Claude Code does not have an OAuth token (API key session?)"
+msgstr "Claude Code no tiene un token OAuth (¿sesión con API key?)"
+
+#: package/contents/ui/main.qml:57
+msgid "Claude Code session has expired: log in again"
+msgstr "La sesión de Claude Code ha caducado: vuelve a iniciar sesión"
+
+#: package/contents/ui/main.qml:58
+msgid "Token expired and no refresh token available"
+msgstr "Token caducado y sin refresh token"
+
+#: package/contents/ui/main.qml:59
+msgid "Token expired: Claude Code is running and will refresh it"
+msgstr "Token caducado: Claude Code está abierto y lo renovará…"
+
+#: package/contents/ui/main.qml:60
+msgid "Failed to refresh Claude token"
+msgstr "No se pudo renovar el token de Claude"
+
+#: package/contents/ui/main.qml:61
+msgid "Codex is not logged into ChatGPT"
+msgstr "Codex no tiene sesión de ChatGPT"
+
+#: package/contents/ui/main.qml:62
+msgid "Install Codex CLI and log in with your ChatGPT account"
+msgstr "Instala Codex CLI e inicia sesión con tu cuenta de ChatGPT"
+
+#: package/contents/ui/main.qml:63
+msgid "No ChatGPT data (%1). Use Codex once to generate it"
+msgstr "Sin datos de ChatGPT (%1). Usa Codex una vez para generarlos"
+
+#: package/contents/ui/main.qml:64
+msgid "Open Antigravity to read Gemini quota"
+msgstr "Abre Antigravity para leer la cuota de Gemini"
+
+#: package/contents/ui/main.qml:65
+msgid "Antigravity server did not respond"
+msgstr "El servidor de Antigravity no respondió"
+
+#: package/contents/ui/main.qml:66
+msgid "Antigravity returned no model quotas"
+msgstr "Antigravity no devolvió cuotas de modelos"
+
+#: package/contents/ui/main.qml:67
+msgid "Unexpected error: %1"
+msgstr "Excepción inesperada: %1"
+
+#: package/contents/ui/main.qml:85 package/contents/ui/ProviderCard.qml:45
+msgid "%1 d %2 h"
+msgstr "%1 d %2 h"
+
+#: package/contents/ui/main.qml:86 package/contents/ui/ProviderCard.qml:46
+msgid "%1 h %2 min"
+msgstr "%1 h %2 min"
+
+#: package/contents/ui/main.qml:86 package/contents/ui/ProviderCard.qml:47
+msgid "%1 min"
+msgstr "%1 min"
+
+#: package/contents/ui/main.qml:105
+msgid " Resets in %1."
+msgstr " Se reinicia en %1."
+
+#: package/contents/ui/main.qml:108
+msgid "%1: tokens reloaded"
+msgstr "%1: tokens recargados"
+
+#: package/contents/ui/main.qml:109
+msgid "%1 has been reset. You are now at %2 %."
+msgstr "%1 se ha reiniciado. Ahora llevas un %2 %."
+
+#: package/contents/ui/main.qml:112 package/contents/ui/main.qml:117
+msgid "%1: %2 % · %3"
+msgstr "%1: %2 % · %3"
+
+#: package/contents/ui/main.qml:113
+msgid "You have reached the critical threshold (%1 %)."
+msgstr "Has llegado al umbral crítico (%1 %)."
+
+#: package/contents/ui/main.qml:118
+msgid "You have reached the warning threshold (%1 %)."
+msgstr "Has llegado al umbral de aviso (%1 %)."
+
+#: package/contents/ui/main.qml:143
+msgid "Updated just now"
+msgstr "Actualizado ahora mismo"
+
+#: package/contents/ui/main.qml:144
+msgid "Updated 1 min ago"
+msgid_plural "Updated %1 min ago"
+msgstr[0] "Actualizado hace 1 min"
+msgstr[1] "Actualizado hace %1 min"
+
+#: package/contents/ui/main.qml:145
+msgctxt "Updated at [time]"
+msgid "Updated at %1"
+msgstr "Actualizado a las %1"
+
+#: package/contents/ui/main.qml:158 package/contents/ui/main.qml:256
+msgid "Token Usage"
+msgstr "Uso de tokens"
+
+#: package/contents/ui/main.qml:178
+msgid "Could not read response: %1"
+msgstr "No se pudo leer la respuesta: %1"
+
+#: package/contents/ui/main.qml:279
+msgid "Refresh now"
+msgstr "Actualizar ahora"
+
+#: package/contents/ui/main.qml:285
+msgid "Configure"
+msgstr "Configurar"
+
+#: package/contents/ui/main.qml:299
+msgid "Enable at least one provider in the widget settings."
+msgstr "Activa algún proveedor en la configuración del widget."
+
+#: package/contents/ui/ProviderCard.qml:40
+msgctxt "time left until reset"
+msgid "now"
+msgstr "ya"
+
+#: package/contents/ui/ProviderCard.qml:115
+msgid "Saved data (%1)"
+msgstr "Datos guardados (%1)"
+
+#: package/contents/ui/ProviderCard.qml:177
+#: package/contents/ui/ProviderCard.qml:230
+msgid "Resets in %1"
+msgstr "Reinicia en %1"
+
+#: package/contents/ui/SoundField.qml:11
+msgctxt "Default sound option"
+msgid "Default"
+msgstr "Por defecto"
+
+#: package/contents/ui/SoundField.qml:17
+msgid "No sound"
+msgstr "Sin sonido"
+
+#: package/contents/ui/SoundField.qml:18
+msgctxt "Sound name"
+msgid "Warning"
+msgstr "Aviso"
+
+#: package/contents/ui/SoundField.qml:19
+msgctxt "Sound name"
+msgid "Information"
+msgstr "Información"
+
+#: package/contents/ui/SoundField.qml:20
+msgctxt "Sound name"
+msgid "Attention"
+msgstr "Atención"
+
+#: package/contents/ui/SoundField.qml:21
+msgctxt "Sound name"
+msgid "New message"
+msgstr "Mensaje nuevo"
+
+#: package/contents/ui/SoundField.qml:22
+msgctxt "Sound name"
+msgid "New email"
+msgstr "Correo nuevo"
+
+#: package/contents/ui/SoundField.qml:23
+msgctxt "Sound name"
+msgid "Completed"
+msgstr "Completado"
+
+#: package/contents/ui/SoundField.qml:24
+msgctxt "Sound name"
+msgid "Success"
+msgstr "Éxito"
+
+#: package/contents/ui/SoundField.qml:25
+msgctxt "Sound name"
+msgid "Alarm"
+msgstr "Alarma"
+
+#: package/contents/ui/SoundField.qml:26
+msgctxt "Sound name"
+msgid "Bell"
+msgstr "Campana"
+
+#: package/contents/ui/SoundField.qml:27
+msgctxt "Sound name"
+msgid "Low battery"
+msgstr "Batería baja"
+
+#: package/contents/ui/SoundField.qml:28
+msgctxt "Sound name"
+msgid "Error"
+msgstr "Error"
+
+#: package/contents/ui/SoundField.qml:29
+msgctxt "Sound name"
+msgid "Incoming call"
+msgstr "Llamada entrante"
+
+#: package/contents/ui/SoundField.qml:41
+msgid "File: "
+msgstr "Archivo: "
+
+#: package/contents/ui/SoundField.qml:55
+msgid "File..."
+msgstr "Archivo…"
+
+#: package/contents/ui/SoundField.qml:68
+msgid "Test"
+msgstr "Probar"
+
+#: package/contents/ui/SoundField.qml:70
+msgid "Shows a test notification with this sound"
+msgstr "Muestra una notificación de prueba con este sonido"
+
+#: package/contents/ui/SoundField.qml:77
+msgid "Choose a sound"
+msgstr "Elige un sonido"
+
+#: package/contents/ui/SoundField.qml:79
+msgid "Audio (*.oga *.ogg *.wav *.mp3 *.flac *.opus)"
+msgstr "Audio (*.oga *.ogg *.wav *.mp3 *.flac *.opus)"
+
+#: package/contents/ui/UsageBreakdown.qml:23
+msgid "Claude Code"
+msgstr "Claude Code"
+
+#: package/contents/ui/UsageBreakdown.qml:24
+msgid "Chats"
+msgstr "Chats"
+
+#: package/contents/ui/UsageBreakdown.qml:25
+msgctxt "Other usage categories"
+msgid "Other"
+msgstr "Otros"
+
+#: package/contents/ui/UsageBreakdown.qml:36
+msgid "Weekly usage breakdown"
+msgstr "Reparto del uso semanal"
+
+#: package/contents/ui/UsageBreakdown.qml:118
+msgid "%1 of this week's usage"
+msgstr "%1 del uso de esta semana"
+
+#: package/contents/config/config.qml:6
+msgid "General"
+msgstr "General"
+
+#: package/contents/config/config.qml:11
+msgid "Appearance"
+msgstr "Apariencia"

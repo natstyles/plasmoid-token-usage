@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name=""/>
+  <group name="General">
+    <entry name="refreshMinutes" type="Int">
+      <default>5</default>
+    </entry>
+    <entry name="showClaude" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showChatGPT" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="showGemini" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showWeekly" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showResetDate" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showHistory" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showBreakdown" type="Bool">
+      <default>true</default>
+    </entry>
+    <!-- Horas de historial -->
+    <entry name="historyHours" type="Int">
+      <default>24</default>
+    </entry>
+  </group>
+  <group name="Appearance">
+    <!-- Estilo panel -->
+    <entry name="compactStyle" type="Int">
+      <default>0</default>
+    </entry>
+    <!-- Métrica panel -->
+    <entry name="compactMetric" type="Int">
+      <default>0</default>
+    </entry>
+    <!-- Estilo ventana -->
+    <entry name="popupStyle" type="Int">
+      <default>0</default>
+    </entry>
+    <entry name="popupWidth" type="Int">
+      <default>24</default>
+    </entry>
+    <entry name="cardBackground" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="colorByLevel" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="warnThreshold" type="Int">
+      <default>70</default>
+    </entry>
+    <entry name="critThreshold" type="Int">
+      <default>90</default>
+    </entry>
+    <entry name="notifyEnabled" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="notifyWarn" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="notifyCrit" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="notifyReset" type="Bool">
+      <default>true</default>
+    </entry>
+    <!-- Configuración de sonidos -->
+    <entry name="alertSound" type="String">
+      <default></default>
+    </entry>
+    <entry name="resetSound" type="String">
+      <default></default>
+    </entry>
+    <entry name="colorClaude" type="Color">
+      <default>#D97757</default>
+    </entry>
+    <entry name="colorChatGPT" type="Color">
+      <default>#10A37F</default>
+    </entry>
+    <entry name="colorGemini" type="Color">
+      <default>#4285F4</default>
+    </entry>
+    <!-- Logo personalizado -->
+    <entry name="logoClaude" type="String">
+      <default></default>
+    </entry>
+    <entry name="logoChatGPT" type="String">
+      <default></default>
+    </entry>
+    <entry name="logoGemini" type="String">
+      <default></default>
+    </entry>
+  </group>
+</kcfg>

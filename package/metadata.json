@@ -1,0 +1,20 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "richardsarizandieta@gmail.com",
+                "Name": "Steven Arizandieta"
+            }
+        ],
+        "Category": "System Information",
+        "Description": "Claude, ChatGPT and Gemini token usage: session, week and time until reset",
+        "Description[es]": "Uso de tokens de Claude, ChatGPT y Gemini: sesión, semana y tiempo hasta el reinicio",
+        "Icon": "io.github.natstyles.aiusage",
+        "Id": "io.github.natstyles.aiusage",
+        "License": "GPL-3.0-or-later",
+        "Name": "Token Usage",
+        "Version": "1.0.0"
+    },
+    "KPackageStructure": "Plasma/Applet",
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
