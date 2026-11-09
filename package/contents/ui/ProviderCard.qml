@@ -24,6 +24,8 @@ Rectangle {
     property bool showHistory: true
     property bool showBreakdown: true
     property real historyHours: 168
+    property bool showMarker: true
+    property var markerFor: w => -1
 
     property var windowLabelFn
     property var errorTextFn
@@ -137,6 +139,7 @@ Rectangle {
                     required property var modelData
                     readonly property real percent: modelData.percent === null ? 0 : modelData.percent
                     readonly property string percentText: modelData.percent === null ? "—" : Math.round(percent) + " %"
+                    readonly property real marker: card.showMarker ? card.markerFor(modelData) : -1
 
                     Layout.fillWidth: true
                     Layout.preferredWidth: 1
@@ -163,6 +166,7 @@ Rectangle {
                             crit: card.crit
                             thickness: 0.12
                             centerText: win.percentText
+                            outerMarker: win.marker
                         }
                         ColumnLayout {
                             Layout.fillWidth: true
@@ -226,6 +230,16 @@ Rectangle {
                                 height: parent.height
                                 radius: parent.radius
                                 color: card.levelColor(win.percent)
+                            }
+                            // Tick where usage would be at an even pace
+                            Rectangle {
+                                visible: win.marker >= 0
+                                width: 2
+                                height: parent.height + Kirigami.Units.smallSpacing * 2
+                                anchors.verticalCenter: parent.verticalCenter
+                                x: Math.round(parent.width * Math.min(Math.max(win.marker, 0), 1) - width / 2)
+                                radius: width / 2
+                                color: Kirigami.Theme.textColor
                             }
                         }
                         PC3.Label {

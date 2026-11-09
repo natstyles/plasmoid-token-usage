@@ -18,6 +18,9 @@ Item {
     property string centerText: ""
     property bool failed: false
     property real thickness: 0.11
+    // Elapsed share of each window, 0..1; below 0 hides the marker
+    property real outerMarker: -1
+    property real innerMarker: -1
 
     function levelColor(p) {
         if (byLevel && p >= crit) return Kirigami.Theme.negativeTextColor
@@ -34,6 +37,8 @@ Item {
     onByLevelChanged: canvas.requestPaint()
     onWarnChanged: canvas.requestPaint()
     onCritChanged: canvas.requestPaint()
+    onOuterMarkerChanged: canvas.requestPaint()
+    onInnerMarkerChanged: canvas.requestPaint()
 
     Canvas {
         id: canvas
@@ -65,10 +70,28 @@ Item {
                 }
             }
 
+            // Dot where usage would be at an even pace
+            function marker(radius, fraction) {
+                if (fraction < 0) return
+                const angle = start + 2 * Math.PI * Math.min(fraction, 1)
+                const r = Math.max(1.5, line * 0.45)
+                ctx.beginPath()
+                ctx.arc(cx + radius * Math.cos(angle), cy + radius * Math.sin(angle), r, 0, 2 * Math.PI)
+                ctx.fillStyle = Kirigami.Theme.textColor
+                ctx.fill()
+                ctx.lineWidth = Math.max(0.5, line * 0.12)
+                ctx.strokeStyle = Qt.alpha("#000000", 0.45)
+                ctx.stroke()
+            }
+
             const outer = size / 2 - line / 2
+            const inner = outer - line * 1.5
             ring(outer, gauge.outerPercent)
             if (gauge.innerPercent >= 0)
-                ring(outer - line * 1.5, gauge.innerPercent)
+                ring(inner, gauge.innerPercent)
+            marker(outer, gauge.outerMarker)
+            if (gauge.innerPercent >= 0)
+                marker(inner, gauge.innerMarker)
         }
     }
 
