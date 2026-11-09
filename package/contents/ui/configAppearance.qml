@@ -15,6 +15,7 @@ KCM.SimpleKCM {
     property alias cfg_popupWidth: popupWidthSpin.value
     property alias cfg_cardBackground: cardBackgroundCheck.checked
     property alias cfg_colorByLevel: colorByLevelCheck.checked
+    property alias cfg_showPaceMarker: paceMarkerCheck.checked
     property alias cfg_warnThreshold: warnSpin.value
     property alias cfg_critThreshold: critSpin.value
     property alias cfg_colorClaude: claudeColor.color
@@ -136,6 +137,17 @@ KCM.SimpleKCM {
         Item {
             Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Alerts")
+        }
+        QQC2.CheckBox {
+            id: paceMarkerCheck
+            text: i18n("Mark elapsed time on rings and bars")
+        }
+        QQC2.Label {
+            Layout.maximumWidth: Kirigami.Units.gridUnit * 22
+            wrapMode: Text.Wrap
+            opacity: 0.7
+            font: Kirigami.Theme.smallFont
+            text: i18n("A dot on rings and a tick on bars show how much of the window has passed. Usage ahead of the marker means you will hit the limit before it resets.")
         }
         QQC2.CheckBox {
             id: colorByLevelCheck
