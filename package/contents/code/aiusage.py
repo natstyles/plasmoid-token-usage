@@ -51,7 +51,7 @@ def to_epoch(value):
     return dt.timestamp()
 
 
-def window(key, label_id, label_args, label, kind, percent, resets_at):
+def window(key, label_id, label_args, label, kind, percent, resets_at, not_started=False):
     return {
         "key": key,
         "label_id": label_id,
@@ -59,7 +59,8 @@ def window(key, label_id, label_args, label, kind, percent, resets_at):
         "label": label,
         "kind": kind,
         "percent": None if percent is None else round(float(percent), 1),
-        "resets_at": to_epoch(resets_at),
+        "resets_at": None if not_started else to_epoch(resets_at),
+        "not_started": not_started,
     }
 
 
@@ -203,6 +204,12 @@ def _codex_reset(w, event_ts=None):
     return None
 
 
+def _codex_not_started(w):
+    """True when no window is running: ChatGPT then reports 0 % and a full window left."""
+    secs, left = w.get("limit_window_seconds"), w.get("reset_after_seconds")
+    return not w.get("used_percent") and secs is not None and left is not None and left >= secs - 1
+
+
 def _codex_from_api(base):
     with open(os.path.join(base, "auth.json")) as f:
         tokens = json.load(f).get("tokens") or {}
@@ -219,7 +226,8 @@ def _codex_from_api(base):
         if w:
             secs = w.get("limit_window_seconds")
             key, label_id, label_args, label, kind = window_label(secs / 60 if secs else None, kind)
-            windows.append(window(key, label_id, label_args, label, kind, w.get("used_percent"), _codex_reset(w)))
+            windows.append(window(key, label_id, label_args, label, kind, w.get("used_percent"), _codex_reset(w),
+                                  _codex_not_started(w)))
     return {"plan": data.get("plan_type"), "windows": windows}
 
 
