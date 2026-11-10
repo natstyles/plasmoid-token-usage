@@ -18,6 +18,8 @@ PlasmoidItem {
     property string errorText: ""
     property bool loading: false
     property real now: Date.now()
+    // Command of the newest fetch; answers from older fetches are ignored
+    property string pendingSource: ""
 
     // Estado anterior de los límites
     property var lastWindows: ({})
@@ -78,11 +80,14 @@ PlasmoidItem {
     function refresh() {
         const ids = enabledProviders()
         if (ids.length === 0) {
+            pendingSource = ""
+            loading = false
             providers = []
             return
         }
         loading = true
-        executable.connectSource("python3 '" + scriptPath + "' --hours " + cfg.historyHours + " " + ids.join(" "))
+        pendingSource = "python3 '" + scriptPath + "' --hours " + cfg.historyHours + " " + ids.join(" ")
+        executable.connectSource(pendingSource)
     }
 
     function countdown(epoch) {
@@ -187,9 +192,12 @@ PlasmoidItem {
 
         onNewData: (source, data) => {
             disconnectSource(source)
+            // A settings change started a newer fetch: this answer is outdated
+            if (source !== root.pendingSource) return
             root.loading = false
             try {
-                const list = JSON.parse(data["stdout"]).providers
+                const enabled = root.enabledProviders()
+                const list = JSON.parse(data["stdout"]).providers.filter(p => enabled.includes(p.id))
                 root.checkAlerts(list)
                 root.providers = list
                 root.lastUpdate = new Date()
