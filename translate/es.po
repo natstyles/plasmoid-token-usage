@@ -424,6 +424,11 @@ msgstr "ya"
 msgid "Saved data (%1)"
 msgstr "Datos guardados (%1)"
 
+#: package/contents/ui/ProviderCard.qml:182
+#: package/contents/ui/ProviderCard.qml:237
+msgid "Starts on first use"
+msgstr "Empieza con el primer uso"
+
 #: package/contents/ui/ProviderCard.qml:177
 #: package/contents/ui/ProviderCard.qml:230
 msgid "Resets in %1"

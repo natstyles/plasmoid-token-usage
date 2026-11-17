@@ -176,9 +176,11 @@ Rectangle {
                                 elide: Text.ElideRight
                             }
                             PC3.Label {
-                                visible: !!win.modelData.resets_at
+                                visible: !!win.modelData.resets_at || !!win.modelData.not_started
                                 Layout.fillWidth: true
-                                text: i18n("Resets in %1", card.countdown(win.modelData.resets_at || 0))
+                                text: win.modelData.not_started
+                                      ? i18n("Starts on first use")
+                                      : i18n("Resets in %1", card.countdown(win.modelData.resets_at || 0))
                                 opacity: 0.8
                                 elide: Text.ElideRight
                             }
@@ -229,10 +231,12 @@ Rectangle {
                             }
                         }
                         PC3.Label {
-                            visible: !!win.modelData.resets_at
+                            visible: !!win.modelData.resets_at || !!win.modelData.not_started
                             Layout.fillWidth: true
-                            text: i18n("Resets in %1", card.countdown(win.modelData.resets_at || 0))
-                                  + (card.showResetDate ? " · " + card.resetDate(win.modelData.resets_at || 0) : "")
+                            text: win.modelData.not_started
+                                  ? i18n("Starts on first use")
+                                  : i18n("Resets in %1", card.countdown(win.modelData.resets_at || 0))
+                                    + (card.showResetDate ? " · " + card.resetDate(win.modelData.resets_at || 0) : "")
                             opacity: 0.7
                             font: Kirigami.Theme.smallFont
                             elide: Text.ElideRight
