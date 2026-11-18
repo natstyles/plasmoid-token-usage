@@ -55,6 +55,10 @@
     <entry name="colorByLevel" type="Bool">
       <default>true</default>
     </entry>
+    <!-- Marcador de tiempo transcurrido -->
+    <entry name="showPaceMarker" type="Bool">
+      <default>true</default>
+    </entry>
     <entry name="warnThreshold" type="Int">
       <default>70</default>
     </entry>

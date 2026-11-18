@@ -157,6 +157,14 @@ PlasmoidItem {
         return i18nc("Updated at [time]", "Updated at %1", Qt.formatTime(lastUpdate, "HH:mm"))
     }
 
+    // Elapsed share of a window (0..1), or -1 when its length or reset time is unknown
+    function elapsedFraction(w, nowMs) {
+        if (!w || !w.length || !w.resets_at) return -1
+        const remaining = w.resets_at - nowMs / 1000
+        if (remaining <= 0 || remaining > w.length) return -1
+        return 1 - remaining / w.length
+    }
+
     function tooltipText() {
         if (errorText) return errorText
         return providers.map(p => {
@@ -263,6 +271,8 @@ PlasmoidItem {
             crit: root.cfg.critThreshold
             accentFor: id => root.accentFor(id)
             logoFor: id => root.logoFor(id)
+            showMarker: root.cfg.showPaceMarker
+            markerFor: w => root.elapsedFraction(w, root.now)
         }
     }
 
@@ -350,6 +360,8 @@ PlasmoidItem {
                 showHistory: root.cfg.showHistory
                 showBreakdown: root.cfg.showBreakdown
                 historyHours: root.cfg.historyHours
+                showMarker: root.cfg.showPaceMarker
+                markerFor: w => root.elapsedFraction(w, root.now)
                 windowLabelFn: root.windowLabel
                 errorTextFn: root.providerErrorText
             }

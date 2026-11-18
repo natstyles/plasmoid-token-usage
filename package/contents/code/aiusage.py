@@ -51,7 +51,7 @@ def to_epoch(value):
     return dt.timestamp()
 
 
-def window(key, label_id, label_args, label, kind, percent, resets_at, not_started=False):
+def window(key, label_id, label_args, label, kind, percent, resets_at, length=None, not_started=False):
     return {
         "key": key,
         "label_id": label_id,
@@ -61,6 +61,8 @@ def window(key, label_id, label_args, label, kind, percent, resets_at, not_start
         "percent": None if percent is None else round(float(percent), 1),
         "resets_at": None if not_started else to_epoch(resets_at),
         "not_started": not_started,
+        # Window length in seconds, for the elapsed-time marker
+        "length": length,
     }
 
 
@@ -161,15 +163,15 @@ def claude():
         },
     )
     windows = []
-    for source_key, key, label_id, label_args, label, kind in (
-        ("five_hour", "session", "session", {"hours": 5}, "Session (5 h)", "session"),
-        ("seven_day", "weekly", "weekly", {}, "Weekly", "weekly"),
-        ("seven_day_opus", "weekly_opus", "weekly_model", {"model": "Opus"}, "Weekly · Opus", "weekly"),
-        ("seven_day_sonnet", "weekly_sonnet", "weekly_model", {"model": "Sonnet"}, "Weekly · Sonnet", "weekly"),
+    for source_key, key, label_id, label_args, label, kind, length in (
+        ("five_hour", "session", "session", {"hours": 5}, "Session (5 h)", "session", 5 * 3600),
+        ("seven_day", "weekly", "weekly", {}, "Weekly", "weekly", 7 * 86400),
+        ("seven_day_opus", "weekly_opus", "weekly_model", {"model": "Opus"}, "Weekly · Opus", "weekly", 7 * 86400),
+        ("seven_day_sonnet", "weekly_sonnet", "weekly_model", {"model": "Sonnet"}, "Weekly · Sonnet", "weekly", 7 * 86400),
     ):
         w = data.get(source_key)
         if w:
-            windows.append(window(key, label_id, label_args, label, kind, w.get("utilization"), w.get("resets_at")))
+            windows.append(window(key, label_id, label_args, label, kind, w.get("utilization"), w.get("resets_at"), length))
     return {"plan": oauth.get("subscriptionType"), "windows": windows,
             "breakdown": _claude_breakdown(data.get("seven_day_breakdown"))}
 
@@ -226,7 +228,7 @@ def _codex_from_api(base):
         if w:
             secs = w.get("limit_window_seconds")
             key, label_id, label_args, label, kind = window_label(secs / 60 if secs else None, kind)
-            windows.append(window(key, label_id, label_args, label, kind, w.get("used_percent"), _codex_reset(w),
+            windows.append(window(key, label_id, label_args, label, kind, w.get("used_percent"), _codex_reset(w), secs,
                                   _codex_not_started(w)))
     return {"plan": data.get("plan_type"), "windows": windows}
 
@@ -252,8 +254,10 @@ def _codex_from_sessions(base):
             for key, kind in (("primary", "session"), ("secondary", "weekly")):
                 w = limits.get(key)
                 if w:
-                    key, label_id, label_args, label, kind = window_label(w.get("window_minutes"), kind)
-                    windows.append(window(key, label_id, label_args, label, kind, w.get("used_percent"), _codex_reset(w, event_ts)))
+                    minutes = w.get("window_minutes")
+                    key, label_id, label_args, label, kind = window_label(minutes, kind)
+                    windows.append(window(key, label_id, label_args, label, kind, w.get("used_percent"),
+                                          _codex_reset(w, event_ts), minutes * 60 if minutes else None))
             if windows:
                 return {"plan": limits.get("plan_type"), "windows": windows, "stale_since": event_ts}
     return None

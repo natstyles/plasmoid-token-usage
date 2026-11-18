@@ -21,13 +21,36 @@ GridLayout {
     property int crit: 90
     property var accentFor: id => Kirigami.Theme.highlightColor
     property var logoFor: id => ""
+    property bool showMarker: true
+    property var markerFor: w => -1
+
+    // Window of a kind with the highest usage
+    function windowOf(provider, kind) {
+        if (!provider.ok) return null
+        let best = null
+        for (const w of provider.windows)
+            if (w.kind === kind && w.percent !== null && (!best || w.percent > best.percent)) best = w
+        return best
+    }
 
     function windowPercent(provider, kind) {
-        if (!provider.ok) return -1
-        let max = -1
-        for (const w of provider.windows)
-            if (w.kind === kind && w.percent !== null) max = Math.max(max, w.percent)
-        return max
+        const w = windowOf(provider, kind)
+        return w ? w.percent : -1
+    }
+
+    // Elapsed share of the window, or -1 to hide the marker
+    function windowMarker(provider, kind) {
+        const w = showMarker ? windowOf(provider, kind) : null
+        return w ? markerFor(w) : -1
+    }
+
+    // Marker for the window the single ring shows
+    function metricMarker(provider) {
+        const session = windowPercent(provider, "session")
+        const weekly = windowPercent(provider, "weekly")
+        if (metric === 1) return weekly >= 0 ? windowMarker(provider, "weekly") : windowMarker(provider, "session")
+        if (metric === 2) return weekly > session ? windowMarker(provider, "weekly") : windowMarker(provider, "session")
+        return session >= 0 ? windowMarker(provider, "session") : windowMarker(provider, "weekly")
     }
 
     // Obtención del porcentaje según métrica
@@ -73,6 +96,8 @@ GridLayout {
             Layout.preferredHeight: view.vertical ? width : -1
             outerPercent: view.style === 0 ? view.windowPercent(modelData, "session") : percent
             innerPercent: view.style === 0 && view.showWeekly ? view.windowPercent(modelData, "weekly") : -1
+            outerMarker: view.style === 0 ? view.windowMarker(modelData, "session") : view.metricMarker(modelData)
+            innerMarker: view.style === 0 ? view.windowMarker(modelData, "weekly") : -1
             accent: view.accentFor(modelData.id)
             byLevel: view.byLevel
             warn: view.warn

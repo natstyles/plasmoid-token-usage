@@ -15,6 +15,7 @@ KCM.SimpleKCM {
     property alias cfg_popupWidth: popupWidthSpin.value
     property alias cfg_cardBackground: cardBackgroundCheck.checked
     property alias cfg_colorByLevel: colorByLevelCheck.checked
+    property alias cfg_showPaceMarker: paceMarkerCheck.checked
     property alias cfg_warnThreshold: warnSpin.value
     property alias cfg_critThreshold: critSpin.value
     property alias cfg_colorClaude: claudeColor.color
@@ -80,6 +81,17 @@ KCM.SimpleKCM {
         QQC2.CheckBox {
             id: cardBackgroundCheck
             text: i18n("Colored background cards")
+        }
+        QQC2.CheckBox {
+            id: paceMarkerCheck
+            text: i18n("Mark elapsed time on rings and bars")
+        }
+        QQC2.Label {
+            Layout.maximumWidth: Kirigami.Units.gridUnit * 22
+            wrapMode: Text.Wrap
+            opacity: 0.7
+            font: Kirigami.Theme.smallFont
+            text: i18n("A dot on rings and a tick on bars show how much of the window has passed. Usage ahead of the marker means you will hit the limit before it resets.")
         }
 
         Item {
@@ -192,6 +204,7 @@ KCM.SimpleKCM {
             enabled: notifyCheck.checked && notifyResetCheck.checked
             defaultLabel: i18nc("Default reset sound", "Default (Completed)")
             onTestRequested: notifier.send("reset", i18n("Gemini: tokens reloaded"),
+                // xgettext:no-c-format
                 i18n("Notification test: your session quota has been reset and you have 100 % available again."),
                 bundledLogo("gemini"), value, false)
         }
